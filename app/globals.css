@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body * {
+    visibility: hidden !important;
+  }
+  #pdf-quotation-sheet,
+  #pdf-quotation-sheet * {
+    visibility: visible !important;
+  }
+  #pdf-quotation-sheet {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  tr,
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  thead {
+    display: table-header-group;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
